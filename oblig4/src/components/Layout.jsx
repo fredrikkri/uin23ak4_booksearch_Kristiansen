@@ -1,4 +1,6 @@
-export default function Layout({children}){
+import SearchBar from "./SearchBar";
+
+export default function Layout({children, query, setQuery}){
     return(
         <>
         <header>
@@ -7,9 +9,13 @@ export default function Layout({children}){
             </nav>
         </header>
         <main>
+            <section className="searchBar">
+                <SearchBar content={query} setQuery={setQuery}>
+                </SearchBar>
+            </section>
         {children}
         </main>
-        <footer>Footer</footer>
+        <footer></footer>
         </>
     )
 }

@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react'
 import Layout from './components/Layout'
 import './App.css'
 import SearchResults from './components/SearchResults'
-import SearchBar from './components/SearchBar'
 
 function App() {
 
   const [query, setQuery] = useState("James+Bond")
   const [content, setContent] = useState([])
+  const [currentId, setCurrentId] = useState("")
 
 
    const getData = async()=>{
@@ -24,17 +24,17 @@ function App() {
 
    useEffect(()=>{
     getData()
+    setCurrentId(localStorage.getItem("_version_"))
   },[query])
 
+  console.log("ID", currentId)
 
   return (
     <>
-      <Layout>
+      <Layout content={content} setQuery={setQuery}>
         <Routes>
-          <Route index element={<SearchBar content={content}/>}/>
           <Route index element={<SearchResults content={content}/>}/>
         </Routes>
-          
       </Layout>
     </>
   )

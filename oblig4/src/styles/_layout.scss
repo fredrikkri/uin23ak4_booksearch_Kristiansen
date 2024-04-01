@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2fcec;
+    #root {
+        margin: 0rem;
+        header {
+            text-align: center;
+        }
+        .searchBar {
+            text-align: center;
+        }
+        .display-Books {
+            justify-content: center;
+            display: flex;
+            min-width: 100%;
+            flex-wrap: wrap;
+        }
+        footer{
+            background-color: rgb(198, 198, 198);
+            min-height: 300px;
+            
+        }
+    }
+}
+
+

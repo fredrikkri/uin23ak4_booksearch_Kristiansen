@@ -1,13 +1,31 @@
 import { useState } from "react"
-export default function SearchBar(){
+export default function SearchBar({query, setQuery}){
+    const [search, setSearch] = useState("")
     
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        setQuery(search)
+    }    
+
+    const handleChange = (event)=>{
+        setSearch(event.target.value)
+    }
+
+    const handleClick = (title)=>{
+        setCurrentId(title)
+        localStorage.setItem("karakterID", title)
+    }
+
 return(
     <>
-        <h3>Search for books</h3>
-        <form>
-            <label htmlFor="search">Søk etter bok:</label>
-            <input type="text" id="search" placeholder="James Bond..." ></input>
+        <h2>Search for books</h2>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="search"></label>
+            <input type="text" id="search" placeholder="James Bond..." onChange={handleChange}></input>
             <input type="submit" value="Søk"></input>
         </form>
+        <ul>
+            {query?.map(item => <li key={item._version_}><Link to={item.title} onClick={()=>handleClick(item._version_)}>{item.title}</Link></li>)}
+        </ul>
     </>)
 }

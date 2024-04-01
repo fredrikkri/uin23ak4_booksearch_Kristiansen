@@ -1,18 +1,20 @@
-export default function SearchResults({content}){
+import Bookcard from "./Bookcard";
 
-    const docs = content?.docs;
+export default function SearchResults({content}){
+    const allBooks = content?.docs;
     console.log(content?.docs)
 
     return (
-    <section>
-        <h2>Search Results</h2>
-        {docs?.map(doc => 
-        <article key={doc._version_}>
-        <h3>{doc.title}</h3>
-        <p>{doc.first_publish_year}</p>
-        <p>{doc.author_name}</p>
-        <p>{doc.ratings_average}</p>
-        <img src={`https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`} alt={doc.title}/>
-        </article>)}
-    </section>
-)}
+    <span className="display-Books">
+        {allBooks?.map(singleBook => 
+        <Bookcard className="card" 
+            key={singleBook._version_} 
+            title={singleBook.title} 
+            first_publish_year={singleBook.first_publish_year}
+            author_name={singleBook.author_name}
+            ratings_average={singleBook.ratings_average}
+            coverImage={singleBook.cover_i}>
+        </Bookcard>)}
+    </span>
+    )
+}
