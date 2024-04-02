@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f5fcef;
+    background: linear-gradient(to right, rgba(255, 231, 254, 0.077), rgba(110, 190, 190, 0.104));
     #root {
         margin: 0rem;
         header {
@@ -17,12 +17,5 @@ body {
             min-width: 100%;
             flex-wrap: wrap;
         }
-        footer{
-            background-color: rgb(198, 198, 198);
-            min-height: 300px;
-            
-        }
     }
 }
-
-
