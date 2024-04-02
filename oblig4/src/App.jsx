@@ -8,7 +8,7 @@ function App() {
 
   const [query, setQuery] = useState("James+Bond")
   const [content, setContent] = useState([])
-  const [currentId, setCurrentId] = useState("")
+  // const [currentId, setCurrentId] = useState("")
 
 
    const getData = async()=>{
@@ -24,10 +24,10 @@ function App() {
 
    useEffect(()=>{
     getData()
-    setCurrentId(localStorage.getItem("_version_"))
+    // setCurrentId(localStorage.getItem("_version_"))
   },[query])
 
-  console.log("ID", currentId)
+  // console.log("ID", currentId)
 
   return (
     <>

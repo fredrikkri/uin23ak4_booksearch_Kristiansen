@@ -15,7 +15,6 @@ export default function Layout({children, query, setQuery}){
             </section>
         {children}
         </main>
-        <footer></footer>
         </>
     )
 }

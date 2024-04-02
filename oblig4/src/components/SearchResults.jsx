@@ -13,7 +13,8 @@ export default function SearchResults({content}){
             first_publish_year={singleBook.first_publish_year}
             author_name={singleBook.author_name}
             ratings_average={singleBook.ratings_average}
-            coverImage={singleBook.cover_i}>
+            coverImage={singleBook.cover_i}
+            id_amazon={singleBook.id_amazon}>
         </Bookcard>)}
     </span>
     )

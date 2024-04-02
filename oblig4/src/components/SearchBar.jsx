@@ -25,7 +25,7 @@ return(
             <input type="submit" value="Søk"></input>
         </form>
         <ul>
-            {query?.map(item => <li key={item._version_}><Link to={item.title} onClick={()=>handleClick(item._version_)}>{item.title}</Link></li>)}
+            {query?.map(book => <li key={book._version_}><Link to={book.title} onClick={()=>handleClick(book._version_)}>{book.title}</Link></li>)}
         </ul>
     </>)
 }
