@@ -1,6 +1,7 @@
 import Bookcard from "./Bookcard";
 
 export default function SearchResults({content}){
+    
     const allBooks = content?.docs;
     console.log(content?.docs)
 

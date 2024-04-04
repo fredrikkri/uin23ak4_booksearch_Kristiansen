@@ -1,5 +1,7 @@
 import { useState } from "react"
+
 export default function SearchBar({query, setQuery}){
+    
     const [search, setSearch] = useState("")
     
     const handleSubmit = (e)=>{

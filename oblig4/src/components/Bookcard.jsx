@@ -1,6 +1,7 @@
 export default function Bookcard({keyBook, title, first_publish_year, author_name, ratings_average, coverImage, isbn}) {
-
+    
     console.log("isbn",isbn?.length)
+    
     return (
     <>
         <article className="card" key={keyBook}>
